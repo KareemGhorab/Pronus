@@ -1,20 +1,31 @@
 import React from "react"
 import { useForm, type SubmitHandler } from "react-hook-form"
 
-enum Service {
-	Import,
-	Export,
-	Delivery,
-	Marketing,
-	WebDevelopment,
-}
-
 type FormValues = {
 	name: string
 	email: string
-	service: Service
+	service: string
 	message: string
 }
+
+const options = [
+	{
+		label: "Import/Export",
+		value: "importExport",
+	},
+	{
+		label: "Delivery",
+		value: "delivery",
+	},
+	{
+		label: "Marketing",
+		value: "marketing",
+	},
+	{
+		label: "Web Development",
+		value: "webDevelopment",
+	},
+]
 
 export default function App() {
 	const { register, handleSubmit } = useForm<FormValues>()
@@ -26,16 +37,23 @@ export default function App() {
 		<form
 			className="
 		rounded-xl border
-		flex flex-col gap-5
+		flex flex-col
 		p-10 mx-10"
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<input placeholder="Name" {...register("name")} />
-			<input placeholder="Email" {...register("email")} />
+			<input className="my-4" placeholder="Email" {...register("email")} />
 
-			<select>
-				<option>Type of Service</option>
-			</select>
+			<label className="flex flex-col gap-2 mb-4">
+				Type of Service
+				<select>
+					{options.map((option) => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</select>
+			</label>
 
 			<textarea placeholder="Message" rows={10} {...register("message")} />
 

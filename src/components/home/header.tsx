@@ -3,7 +3,7 @@ import MainHeading from "./mainHeading"
 export default function Header() {
 	return (
 		<header
-			className="min-h-[90vh]
+			className="min-h-screen
 			bg-[url('/hero.jpg')]
 			bg-cover
 			relative"

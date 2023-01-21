@@ -8,8 +8,10 @@ body {
 	@apply text-neutral-700;
 }
 
-input, textarea {
-	@apply border rounded-lg px-2 py-1
+input,
+textarea,
+select {
+	@apply border rounded-lg px-2 py-1;
 }
 
 .nav--transparent {
