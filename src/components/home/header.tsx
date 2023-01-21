@@ -4,7 +4,7 @@ export default function Header() {
 	return (
 		<header
 			className="min-h-[90vh]
-			bg-[url('../../public/hero.jpg')]
+			bg-[url('/hero.jpg')]
 			bg-cover
 			relative"
 		>
