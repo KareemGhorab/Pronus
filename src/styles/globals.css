@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply text-neutral-700;
+}
+
+input, textarea {
+	@apply border rounded-lg px-2 py-1
+}
+
+.nav--transparent {
+	@apply bg-opacity-0;
+}
+.nav__item--transparent {
+	@apply text-white;
+}
+
+.nav--white {
+	@apply bg-opacity-90 bg-white;
+}
+.nav__item--white {
+	@apply text-neutral-700;
+}
